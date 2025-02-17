@@ -1,11 +1,40 @@
+import html2canvas from 'html2canvas-pro';
+import { useRef, useCallback, useEffect } from 'react';
 import { useFormStore } from '../store/useFormStore';
+import { useImageExportStore } from '../store/useImageExportStore';
 
 const MyInfoPage = () => {
   const { form } = useFormStore();
 
+  const componentRef = useRef<HTMLDivElement>(null);
+  const setHandleSaveAsImage = useImageExportStore(
+    (state) => state.setHandleSaveAsImage
+  );
+
+  const handleSaveAsImage = useCallback(async () => {
+    if (componentRef.current) {
+      const canvas = await html2canvas(componentRef.current, {
+        backgroundColor: null,
+        useCORS: true,
+      });
+      const dataURL = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = dataURL;
+      link.download = 'my-info.png';
+      link.click();
+    }
+  }, []);
+
+  useEffect(() => {
+    setHandleSaveAsImage(handleSaveAsImage);
+  }, [handleSaveAsImage, setHandleSaveAsImage]);
+
   return (
     <main className="flex-grow flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-xl rounded-4xl shadow-md flex flex-col items-center text-center p-10 gap-6 bg-gradient-to-br from-blue-50 via-blue-100 to-white">
+      <div
+        ref={componentRef}
+        className="w-full max-w-xl rounded-4xl shadow-md flex flex-col items-center text-center p-10 gap-6 bg-gradient-to-br from-blue-50 via-blue-100 to-white overflow-hidden"
+      >
         <p className="px-2.5 py-1 bg-blue-50 rounded-full text-blue-600 font-semibold">
           {form.job}
         </p>

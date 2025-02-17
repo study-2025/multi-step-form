@@ -1,5 +1,6 @@
 import { useFormChange } from '../../hooks/useFormChange';
 import { useFormStore } from '../../store/useFormStore';
+import { useImageExportStore } from '../../store/useImageExportStore';
 import Button from '../common/Button';
 
 const Footer = () => {
@@ -21,6 +22,10 @@ const Footer = () => {
     return false;
   };
 
+  const handleSaveAsImage = useImageExportStore(
+    (state) => state.handleSaveAsImage
+  );
+
   if (currentStep === 0) {
     return <footer className="flex py-10"></footer>;
   }
@@ -37,9 +42,12 @@ const Footer = () => {
 
   if (currentStep === 7) {
     return (
-      <footer className="flex py-10">
-        <Button fullWidth onClick={resetForm}>
+      <footer className="flex gap-2 py-10">
+        <Button fullWidth onClick={resetForm} color="lightBlue">
           다시 작성하기
+        </Button>
+        <Button fullWidth onClick={handleSaveAsImage}>
+          이미지저장
         </Button>
       </footer>
     );
