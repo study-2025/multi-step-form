@@ -28,7 +28,7 @@ const Button = ({
   );
 
   return (
-    <button className={btnClass} {...rest}>
+    <button className={btnClass} {...rest} disabled={disabled}>
       {children}
     </button>
   );
