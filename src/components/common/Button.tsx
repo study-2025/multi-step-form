@@ -20,7 +20,7 @@ const Button = ({
   const currentColor = colorStyles[color] || colorStyles.default;
 
   const btnClass = twMerge(
-    'py-2 px-4 rounded transition-colors duration-200 focus:outline-none text-[15px] h-10',
+    'py-2 px-4 rounded transition-colors duration-200 focus:outline-none text-[15px] h-10 cursor-pointer',
     fullWidth ? 'w-full' : '',
     disabled ? currentColor.disabled : currentColor.base,
     !disabled && currentColor.hover,
