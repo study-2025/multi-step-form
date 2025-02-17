@@ -23,3 +23,8 @@ interface PersistedFormState {
   };
   version?: number;
 }
+
+interface GradientStore {
+  selectedGradientId: string;
+  setSelectedGradientId: (id: string) => void;
+}
