@@ -8,7 +8,7 @@ const IntroductionPage = () => {
   const { handleChange } = useFormChange();
 
   return (
-    <Main title="간단한 자기소개를 입력해주세요" subTitle='(최소 10자)'>
+    <Main title="간단한 자기소개를 입력해주세요" subTitle="(최소 10자)">
       <TextArea
         name="selfIntroduction"
         value={form.selfIntroduction}

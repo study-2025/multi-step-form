@@ -7,7 +7,7 @@ const HobbyPage = () => {
   const { form, toggleHobby } = useFormStore();
 
   return (
-    <Main title="취미를 선택해주세요" subTitle='(최대 3개 선택가능)'>
+    <Main title="취미를 선택해주세요" subTitle="(최대 3개 선택가능)">
       <div className="grid grid-cols-2 gap-4 mb-[-40px]">
         {HOBBY.map((option) => (
           <SelectBox

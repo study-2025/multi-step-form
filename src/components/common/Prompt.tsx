@@ -7,10 +7,7 @@ type PromptProps = {
 };
 
 const Prompt = ({ title, subTitle, className }: PromptProps) => {
-  const mergedClass = twMerge(
-    'text-2xl font-bold text-gray-800',
-    className
-  );
+  const mergedClass = twMerge('text-2xl font-bold text-gray-800', className);
 
   return (
     <div className={mergedClass}>
