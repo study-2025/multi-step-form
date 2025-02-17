@@ -17,7 +17,7 @@ const Header = () => {
             key={option.id}
             onClick={() => setSelectedGradientId(option.id)}
             className={`w-10 h-10 rounded-full border ${
-              selectedGradientId === option.className
+              selectedGradientId === option.id
                 ? 'border-gray-500'
                 : 'border-gray-300'
             } ${option.className}`}
