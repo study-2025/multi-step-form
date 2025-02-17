@@ -6,7 +6,7 @@ export const colorStyles: Record<ColorKey, ColorStyle> = {
   },
   lightBlue: {
     base: 'bg-sky-100 text-blue-500',
-    hover: 'hover:bg-blue-200',
+    hover: 'hover:bg-blue-100',
     disabled: 'bg-blue-300 text-white cursor-not-allowed',
   },
 };
