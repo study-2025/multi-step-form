@@ -1,5 +1,5 @@
 import SelectBox from '../components/common/SelectBox';
-import { HOBBY } from '../components/constant/constant';
+import { HOBBY } from '../config/constant';
 import Main from '../components/layout/Main';
 import { useFormStore } from '../store/useFormStore';
 

@@ -1,5 +1,5 @@
 import SelectBox from '../components/common/SelectBox';
-import { GENDER } from '../components/constant/constant';
+import { GENDER } from '../config/constant';
 import Main from '../components/layout/Main';
 import { useFormStore } from '../store/useFormStore';
 

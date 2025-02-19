@@ -1,4 +1,4 @@
-import { LAST_STEP } from '../components/constant/constant';
+import { LAST_STEP } from '../config/constant';
 import { formSchema } from './schema';
 
 export const formStorage = {

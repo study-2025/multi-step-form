@@ -1,5 +1,5 @@
 import Dropdown from '../components/common/Dropdown';
-import { JOB } from '../components/constant/constant';
+import { JOB } from '../config/constant';
 import Main from '../components/layout/Main';
 import { useFormStore } from '../store/useFormStore';
 
