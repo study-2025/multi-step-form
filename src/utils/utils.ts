@@ -1,9 +1,27 @@
 import { LAST_STEP } from '../components/constant/constant';
+import { formSchema } from './schema';
 
 export const formStorage = {
   getItem: (name: string): string | null => {
-    return sessionStorage.getItem(name) || localStorage.getItem(name);
+    try {
+      const sessionData = sessionStorage.getItem(name);
+      const localData = localStorage.getItem(name);
+      const data = sessionData || localData;
+
+      if (!data) return null;
+
+      const parsed = JSON.parse(data);
+
+      formSchema.parse(parsed.state.form);
+
+      return data;
+    } catch {
+      sessionStorage.removeItem(name);
+      localStorage.removeItem(name);
+      return null;
+    }
   },
+
   setItem: (name: string, value: string): void => {
     try {
       const persisted: PersistedFormState = JSON.parse(value);
@@ -18,6 +36,7 @@ export const formStorage = {
       sessionStorage.setItem(name, value);
     }
   },
+
   removeItem: (name: string): void => {
     sessionStorage.removeItem(name);
     localStorage.removeItem(name);
