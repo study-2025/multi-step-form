@@ -1,0 +1,62 @@
+/*모든 페이지 wrapper*/
+.container {
+  width: 350px;
+  height: 600px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+/*버튼*/
+.btnContainer {
+  width: 100%;
+  display: flex;
+}
+
+.button {
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+/*체크박스*/
+.checkContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+}
+
+/*프로그레스바*/
+.boxContainer {
+  width: 100%;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  border: 1.5px solid black;
+  position: relative;
+}
+
+.step {
+  position: absolute;
+  top: -10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
