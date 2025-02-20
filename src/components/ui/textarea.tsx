@@ -15,7 +15,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<"tex
           {...props}
         />
         <span className="absolute bottom-[-35px] right-0 text-sm text-base">
-          {props.value?.length} / {props.maxLength}
+          {(props.value as string).length} / {props.maxLength}
         </span>
       </div>
     )
